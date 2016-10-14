@@ -4,13 +4,16 @@ import argparse
 import tempfile
 from string import Template
 import os
-import sh
 from os.path import join as J
 import time
+try:
+    import sh
+except ImportError:
+    import pbs as sh
 
 try:
     import cPickle as pickle
-except:
+except ImportError:
     import pickle as pickle
 
 # Templates
